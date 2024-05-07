@@ -1,12 +1,22 @@
 public abstract class Moeda {
-    Double valor;
+    protected Double valor;
+
+    public Moeda(Double valor){
+        this.valor = valor;
+    }
+
+    public Double getValor(){
+        return this.valor;
+    }
+
+    public void setValor(Double valor){
+        this.valor = valor;
+    }
 
     public void info(){
         // Verificar o que o método deve fazer
     }
 
-    public Double converter(){
-        // A conversão varia de moeda para moeda
-        return 0d;
-    }
+    // Método abstrato para ser sobrescrevido
+    public abstract Double converter(Moeda moeda);
 }

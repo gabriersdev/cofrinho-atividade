@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Cofrinho {
     // Lista em que as moedas serão adicionadas
-    ArrayList<Double> listaMoedas = new ArrayList<Double>();
+    private ArrayList<Double> listaMoedas = new ArrayList<Double>();
 
     // Método para adicionar uma moeda a lista listaMoedas
     public Boolean adicionar(Double Moeda){
@@ -31,7 +31,7 @@ public class Cofrinho {
     // Método que calcula e retorna o total do que foi convertido
     public Double totalConvertido(){
         Double total = 0d;
-        
+
         // Percorre a lista usando o foreach do Java
         for (Double moeda : this.listaMoedas){
             // Incrementa a variável total com a moeda
