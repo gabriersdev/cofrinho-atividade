@@ -1,6 +1,13 @@
 public class Main {
     public static void main(String[] args) {
-        Dolar moedaDolar = new Dolar(100f);
-        System.out.println(moedaDolar.converter(new Real(10f)));
+        Cofrinho cofrinho = new Cofrinho();
+
+        cofrinho.adicionar(new Dolar(5.0f));
+        cofrinho.adicionar(new Euro(2.0f));
+        cofrinho.adicionar(new Euro(2.0f));
+
+        cofrinho.listagemPorMoedas();
+        cofrinho.listagemMoedas();
+        cofrinho.totalConvertido();
     }
 }

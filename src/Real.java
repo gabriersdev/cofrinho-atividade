@@ -7,7 +7,7 @@ public class Real extends Moeda {
 
     @Override
     public void info(){
-        // Verificar o que o método deve fazer
+        System.out.println("Classe Real. Pode converter real para euro (1 euro equivale a R$ 5,55) ou dólar (1 dólar equivale a R$ 5,15).");
     }
 
     @Override
@@ -16,12 +16,13 @@ public class Real extends Moeda {
         // A conversão varia de moeda para moeda
         if (moeda instanceof Dolar){
             // Taxa de conversão Real para Dolar
-            resultado = moeda.valor * 5.16f;
+            resultado = moeda.getValor() * 5.15f;
         } else if (moeda instanceof Euro){
             // Taxa de conversão Real para Euro
-            resultado = moeda.valor * 5.55f;
+            resultado = moeda.getValor() * 5.55f;
+        } else {
+            resultado = moeda.getValor() * 1f;
         }
-        addTotalConvertido(resultado);
         return resultado;
     }
 }

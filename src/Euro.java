@@ -7,21 +7,11 @@ public class Euro extends Moeda {
 
     @Override
     public void info(){
-        // Verificar o que o método deve fazer
+        System.out.println("Classe Euro. O percentual de conversão de dólar para real é de 5,55. Isso significa que 1 euro vale R$ 5,55.");
     }
 
     @Override
     public Float converter(Moeda moeda){
-        Float resultado = 0f;
-        // A conversão varia de moeda para moeda
-        if (moeda instanceof Dolar){
-            // Taxa de conversão Euro para Dolar
-            resultado = moeda.valor * 1.08f;
-        } else if (moeda instanceof Real){
-            // Taxa de conversão Euro para Real
-            resultado = moeda.valor * 0.19f;
-        }
-        addTotalConvertido(resultado);
-        return resultado;
+        return moeda.getValor() * 5.55f;
     }
 }

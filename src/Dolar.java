@@ -7,21 +7,11 @@ public class Dolar extends Moeda {
 
     @Override
     public void info(){
-        // Verificar o que o método deve fazer
+        System.out.println("Classe Dólar. O percentual de conversão de dólar para real é de 5,15. Isso significa que 1 dólar vale R$ 5,15.");
     }
 
     @Override
     public Float converter(Moeda moeda){
-        Float resultado = 0f;
-        // A conversão varia de moeda para moeda
-        if (moeda instanceof Euro){
-            // Taxa de conversão Dolar para Euro
-            resultado = moeda.valor * 0.93f;
-        } else if (moeda instanceof Real){
-            // Taxa de conversão Dolar para Real
-            resultado = moeda.valor * 0.18f;
-        }
-        addTotalConvertido(resultado);
-        return resultado;
+        return moeda.getValor() * 5.15f;
     }
 }
