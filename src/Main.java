@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Dolar moedaDolar = new Dolar(100f);
+        System.out.println(moedaDolar.converter(new Real(10f)));
     }
 }

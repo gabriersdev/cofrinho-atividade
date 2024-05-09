@@ -1,15 +1,20 @@
-public abstract class Moeda {
-    protected Double valor;
+import java.util.ArrayList;
 
-    public Moeda(Double valor){
+public abstract class Moeda {
+    protected Float valor;
+    static ArrayList<Float> totalConvertido = new ArrayList<Float>();
+
+    public Moeda(){}
+
+    public Moeda(Float valor){
         this.valor = valor;
     }
 
-    public Double getValor(){
+    public Float getValor(){
         return this.valor;
     }
 
-    public void setValor(Double valor){
+    public void setValor(Float valor){
         this.valor = valor;
     }
 
@@ -18,5 +23,17 @@ public abstract class Moeda {
     }
 
     // Método abstrato para ser sobrescrevido
-    public abstract Double converter(Moeda moeda);
+    public abstract Float converter(Moeda moeda);
+
+    public Float getTotalConvertido(){
+        Float total = 0f;
+        for (Float valor : this.totalConvertido) {
+            total += valor;
+        };
+        return total;
+    }
+
+    public void addTotalConvertido(Float valor){
+        this.totalConvertido.add(valor);
+    }
 }

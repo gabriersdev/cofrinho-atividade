@@ -1,5 +1,7 @@
 public class Euro extends Moeda {
-    public Euro(Double valor){
+    public Euro(){}
+
+    public Euro(Float valor){
         super(valor);
     }
 
@@ -9,13 +11,17 @@ public class Euro extends Moeda {
     }
 
     @Override
-    public Double converter(Moeda moeda){
+    public Float converter(Moeda moeda){
+        Float resultado = 0f;
         // A conversão varia de moeda para moeda
         if (moeda instanceof Dolar){
             // Taxa de conversão Euro para Dolar
+            resultado = moeda.valor * 1.08f;
         } else if (moeda instanceof Real){
             // Taxa de conversão Euro para Real
+            resultado = moeda.valor * 0.19f;
         }
-        return 0d;
+        addTotalConvertido(resultado);
+        return resultado;
     }
 }
