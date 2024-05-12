@@ -33,7 +33,7 @@ public class Cofrinho {
     }
 
     // Lista moeda por moeda armazenada no ArrayList
-    public void listagemMoedas(){
+    public void listarMoedas(){
         Map<String, Float> totais = new HashMap<>();
         System.out.println("Listagem de Moedas:");
         for (Moeda moeda : this.listaMoedas) {
@@ -50,7 +50,7 @@ public class Cofrinho {
     }
 
     // Lista e soma por tipo de moeda armazenada no ArrayList
-    public void listagemPorMoedas(){
+    public void listarPorMoedas(){
         System.out.println("Listagem por tipo de Moeda:");
         Map<String, Float> totais = new HashMap<>();
         for (Moeda moeda : this.listaMoedas){
@@ -79,7 +79,7 @@ public class Cofrinho {
     }
 
     // Método que calcula e retorna o total do que foi convertido
-    public void totalConvertido(){
+    public void exibirTotalConvertido(){
         Float total = 0f;
         // Percorre a lista usando o foreach do Java
         for (Moeda moeda : this.listaMoedas){
