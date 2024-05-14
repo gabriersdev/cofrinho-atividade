@@ -21,18 +21,21 @@ public class Cofrinho {
 
     // Método para remover uma moeda ao array listaMoedas
     public Boolean remover(Moeda moeda){
-        // Verifica se a moeda que se quer remover existe na lista
-        if (this.listaMoedas.contains(moeda)){
-            this.listaMoedas.remove(moeda);
-            // Retorna true para a verificação de sucesso
-            return true;
-        } else {
-            // Retorna false caso a lista de moedas não contenha a Moeda que se desejou remover
-            return false;
+        // Percorrendo o ArrayList para verificar...
+        for (Moeda moedaArmazenada : this.listaMoedas){
+            // Se existe moeda com o mesmo valor que a que se deseja remover
+            if (moedaArmazenada.getValor().equals(moeda.getValor())){
+                // E se ambas são do mesmo tipo
+                if ((moedaArmazenada instanceof Real && moeda instanceof Real) || (moedaArmazenada instanceof Dolar && moeda instanceof Dolar) || (moedaArmazenada instanceof Euro && moeda instanceof Euro)){
+                    this.listaMoedas.remove(moedaArmazenada);
+                    return true;
+                }
+            }
         }
+        return false;
     }
 
-    // Lista moeda por moeda armazenada no ArrayList
+    // Lista moeda pelo que foi armazenado no ArrayList
     public void listarMoedas(){
         Map<String, Float> totais = new HashMap<>();
         System.out.println("Listagem de Moedas:");
@@ -46,6 +49,10 @@ public class Cofrinho {
             } else if (moeda instanceof Dolar) {
                 System.out.println("DÓLAR: " + new DecimalFormat().format(moeda.getValor()));
             }
+        }
+
+        if (this.listaMoedas.isEmpty()) {
+            System.out.println("Não há valores armazenados!");
         }
     }
 
@@ -70,7 +77,7 @@ public class Cofrinho {
             }
         }
 
-        // Imprindo o total armazenado por cada um dos tipo de Moedas
+        // Imprimindo o total armazenado por cada um dos tipo de Moedas
         // Limita a impressão de até duas casas decimais e verifica se existe valor para as chaves
         // Se não houver, imprime 0.0 para evitar exibição de null ou erro
         System.out.printf("REAL: %.2f - ", totais.get("Real") != null ? totais.get("Real") : 0.0f);
