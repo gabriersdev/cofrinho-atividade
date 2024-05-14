@@ -76,7 +76,6 @@ public class Main {
                     case 3 -> cofrinho.listarMoedas();
                     case 4 -> cofrinho.exibirTotalConvertido();
                     case 5 -> cofrinho.listarPorMoedas();
-                    default -> throw new IllegalStateException("Unexpected value: " + selecionado);
                 }
 
             } catch (Exception e){
