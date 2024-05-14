@@ -9,7 +9,7 @@ import java.util.Map;
  */
 public class Cofrinho {
     // Lista em que as moedas serão adicionadas
-    private ArrayList<Moeda> listaMoedas = new ArrayList<Moeda>();
+    private final ArrayList<Moeda> listaMoedas = new ArrayList<>();
 
     public Cofrinho(){}
 
@@ -37,7 +37,6 @@ public class Cofrinho {
 
     // Lista moeda pelo que foi armazenado no ArrayList
     public void listarMoedas(){
-        Map<String, Float> totais = new HashMap<>();
         System.out.println("Listagem de Moedas:");
         for (Moeda moeda : this.listaMoedas) {
             // Verifica se o objeto é instância de alguma das moedas e imprime o valor

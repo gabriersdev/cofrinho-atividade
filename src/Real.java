@@ -12,7 +12,7 @@ public class Real extends Moeda {
 
     @Override
     public Float converter(Moeda moeda){
-        Float resultado = 0f;
+        float resultado;
         // A conversão varia de moeda para moeda
         if (moeda instanceof Dolar){
             // Taxa de conversão Real para Dolar
