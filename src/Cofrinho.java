@@ -86,7 +86,7 @@ public class Cofrinho {
 
     // Método que calcula e retorna o total do que foi convertido
     public void exibirTotalConvertido(){
-        Float total = 0f;
+        Double total = 0d;
         // Percorre a lista usando o foreach do Java
         for (Moeda moeda : this.listaMoedas){
             // Incrementa a variável total com a moeda e faz a conversão se a moeda for euro ou dólar para o valor equivalente em real
