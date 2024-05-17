@@ -3,6 +3,7 @@ import java.util.Scanner;
 import java.util.stream.IntStream;
 
 public class Main {
+    static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         int selecionado = -1;
         Cofrinho cofrinho = new Cofrinho();
@@ -18,8 +19,6 @@ public class Main {
             System.out.println("5 - Listar por tipo de moeda");
             System.out.println("0 - Sair");
 
-            Scanner scanner = new Scanner(System.in);
-
             try{
                 selecionado = scanner.nextInt();
 
@@ -31,7 +30,7 @@ public class Main {
                 switch (selecionado) {
                     case 1 -> {
                         System.out.println("Digite o valor");
-                        Float valorAdicao = scanner.nextFloat();
+                        Double valorAdicao = scanner.nextDouble();
                         switch (escolherTipoMoeda()) {
                             case 1 -> {
                                 cofrinho.adicionar(new Real(valorAdicao));
@@ -53,7 +52,7 @@ public class Main {
                     }
                     case 2 -> {
                         System.out.println("Digite o valor");
-                        Float valorRemover = scanner.nextFloat();
+                        Double valorRemover = scanner.nextDouble();
                         switch (escolherTipoMoeda()) {
                             case 1 -> {
                                 if (cofrinho.remover(new Real(valorRemover))) System.out.println("Valor removido!");
@@ -90,6 +89,7 @@ public class Main {
             }
         }
 
+        scanner.close();
         System.out.println("Encerrado...");
     }
 
@@ -97,8 +97,6 @@ public class Main {
         int moedaSelecionada = -1;
 
         int[] listaTipos = {1, 2, 3};
-
-        Scanner scanner = new Scanner(System.in);
 
         while (true){
             System.out.println("Qual a moeda?");

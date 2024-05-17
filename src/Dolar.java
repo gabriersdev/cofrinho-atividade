@@ -1,7 +1,7 @@
 public class Dolar extends Moeda {
     public Dolar(){}
 
-    public Dolar(Float valor){
+    public Dolar(Double valor){
         super(valor);
     }
 
@@ -11,7 +11,7 @@ public class Dolar extends Moeda {
     }
 
     @Override
-    public Float converter(Moeda moeda){
+    public Double converter(Moeda moeda){
         return moeda.getValor() * 5.15f;
     }
 }

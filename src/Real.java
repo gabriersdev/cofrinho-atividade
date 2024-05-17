@@ -1,7 +1,7 @@
 public class Real extends Moeda {
     public Real(){}
 
-    public Real(Float valor) {
+    public Real(Double valor) {
         super(valor);
     }
 
@@ -11,17 +11,17 @@ public class Real extends Moeda {
     }
 
     @Override
-    public Float converter(Moeda moeda){
-        float resultado;
+    public Double converter(Moeda moeda){
+        Double resultado;
         // A conversão varia de moeda para moeda
         if (moeda instanceof Dolar){
             // Taxa de conversão Real para Dolar
-            resultado = moeda.getValor() * 5.15f;
+            resultado = moeda.getValor() * 5.15d;
         } else if (moeda instanceof Euro){
             // Taxa de conversão Real para Euro
-            resultado = moeda.getValor() * 5.55f;
+            resultado = moeda.getValor() * 5.55d;
         } else {
-            resultado = moeda.getValor() * 1f;
+            resultado = moeda.getValor() * 1d;
         }
         return resultado;
     }

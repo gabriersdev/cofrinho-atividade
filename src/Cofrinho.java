@@ -58,7 +58,7 @@ public class Cofrinho {
     // Lista e soma por tipo de moeda armazenada no ArrayList
     public void listarPorMoedas(){
         System.out.println("Listagem por tipo de Moeda:");
-        Map<String, Float> totais = new HashMap<>();
+        Map<String, Double> totais = new HashMap<>();
         for (Moeda moeda : this.listaMoedas){
             String moedaVez = "";
             if (moeda instanceof Real) {

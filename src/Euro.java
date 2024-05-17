@@ -1,7 +1,7 @@
 public class Euro extends Moeda {
     public Euro(){}
 
-    public Euro(Float valor){
+    public Euro(Double valor){
         super(valor);
     }
 
@@ -11,7 +11,7 @@ public class Euro extends Moeda {
     }
 
     @Override
-    public Float converter(Moeda moeda){
+    public Double converter(Moeda moeda){
         return moeda.getValor() * 5.55f;
     }
 }
